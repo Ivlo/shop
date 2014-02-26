@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  initdate: 2014-02-26 07:37:13
+  maker: MyString
+  quantity: 1
+
+two:
+  name: MyString
+  description: MyText
+  initdate: 2014-02-26 07:37:13
+  maker: MyString
+  quantity: 1
