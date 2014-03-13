@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>State order:</strong>
+  <%= @order.state_order %>
+</p>
+
+<p>
+  <strong>Method payment:</strong>
+  <%= @order.method_payment %>
+</p>
+
+<p>
+  <strong>Shipping address:</strong>
+  <%= @order.shipping_address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @order.city %>
+</p>
+
+<p>
+  <strong>Customer name surname:</strong>
+  <%= @order.customer_name_surname %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
