@@ -18,7 +18,7 @@
   <div class="field">
     <%= f.label :method_payment %><br>
     <%= f.text_field :method_payment %>
-  </div>
+  </div>  
   <div class="field">
     <%= f.label :shipping_address %><br>
     <%= f.text_field :shipping_address %>
@@ -31,6 +31,23 @@
     <%= f.label :customer_name_surname %><br>
     <%= f.text_field :customer_name_surname %>
   </div>
+
+ <%= f.fields_for :line_items do |lineitems|%>
+  <p style: margin-bottom:30px; class="fields">
+    <strong>Line Items</strong>
+    <%=lineitems.label :quantity,"quantity"%><br>
+    <%=lineitems.text_field :quantity%>
+    <%= lineitems.select :product_id, Product.all.collect {|p| [ p.name, p.id ] } %>
+    <%= f.hidden_field :_destroy %>
+    <%= link_to_function "remove", "remove_line_items(this)" %>
+  </p>
+ <%end%>
+
+ <p><%= link_to_add_line_items "Add Lime Item", f, :line_items %></p>  
+
+  <%#f.select :line_items, LineItem.all.collect {|p| [ "Option #{p.id}", p.id ] } %>
+  <%#select @order, :line_items, LineItem.all.collect {|p| [ "Option #{p.id}", p.id ] } %>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
