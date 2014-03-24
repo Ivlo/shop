@@ -1,18 +1,5 @@
-<% if false%>
-tr class="items">
-  <td><%= f.collection_select :product_id, Product.all, :id, :product_with_category, prompt: true %></td>
-  <td class="centercell"><%= f.text_field :quantity %></td>
-  <td class="centercell"><%= f.text_field :price %></td>
-    <td class="centercell">
-      <%= f.hidden_field :id %>
-      <%= f.hidden_field :_destroy %>
-      <%= link_to_function "Remove", "remove_line_item(this)" %>  
-  </td>
-</tr> 
-<%end%>
-
 <%= f.label :quantity,"quantity"%><br>
 <%= f.text_field :quantity%>
-<%= f.select :product_id, Product.all.collect {|p| [ p.name, p.id ] } %>
+<%= f.collection_select :product_id, Product.all, :id, :name %>
 <%= f.hidden_field :_destroy %>
 <%= link_to_function "remove", "remove_line_items(this)" %>
