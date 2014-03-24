@@ -1,0 +1,5 @@
+<li>
+  <p>Product: <%=h line_item.product.name %></p>
+  <p>Quantity: <%=h line_item.quantity %></p>
+  <p>Price: <%=h number_to_currency(line_item.price, precision: 2, unit: "€") %></p>  
+</li>
