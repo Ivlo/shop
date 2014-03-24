@@ -25,5 +25,14 @@
   <%= @order.customer_name_surname %>
 </p>
 
+<p><strong>Order products</strong></p>
+<ul>
+  <% for line_item in @order.line_items %>
+    <li>Product: <%=h line_item.product.name %></li>
+    <li>Quantity: <%=h line_item.quantity %></li>
+    <li>Price: <%=h number_to_currency(line_item.price, precision: 2, unit: "€") %></li>
+  <%end%>
+</ul>
+
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
